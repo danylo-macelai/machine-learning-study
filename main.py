@@ -8,6 +8,8 @@ from step_04_data_splitting import split_data
 
 from step_05_preprocessing import preprocess_data
 
+from step_06_model_training import train_models
+
 
 def main():
     limits = {
@@ -42,6 +44,12 @@ def main():
     print("\n========== STEP 05 PREPROCESSING ==========")
     X_train, X_val, X_test = preprocess_data(X_train, X_val, X_test)
     print(X_train.head(10))
+
+    print("\n========== STEP 06 MODEL TRAINING ==========")
+    models = train_models(X_train, y_train)
+    for name, model in models.items():
+        print(f"{name}: trained successfully")
+
 
 if __name__ == "__main__":
     main()
