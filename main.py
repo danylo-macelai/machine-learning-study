@@ -14,6 +14,8 @@ from step_07_model_evaluation import evaluate_models
 
 from step_08_model_testing import test_best_model
 
+from step_09_model_persistence import dump_model
+
 
 def main():
     limits = {
@@ -69,6 +71,10 @@ def main():
         print(f"{metric}: {value}")
     print("\nPredictions:")
     print(comparison.to_string(index=False))
+
+    print("\n========== STEP 09 MODEL PERSISTENCE ==========")
+    dump_model(models)
+
 
 
 if __name__ == "__main__":
