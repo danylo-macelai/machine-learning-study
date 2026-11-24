@@ -1,6 +1,6 @@
-from step_01_dataset import prediction_tests
+from steps.step_01_dataset import prediction_tests
 
-from step_09_model_persistence import load_model
+from steps.step_09_model_persistence import load_model
 
 
 def main():

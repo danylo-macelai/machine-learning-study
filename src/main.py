@@ -1,20 +1,20 @@
-from step_01_dataset import (create_synthetic_people_dataset)
+from steps.step_01_dataset import (create_synthetic_people_dataset)
 
-from step_02_exploration import (analyze_dataset, analyze_target, visualize_dataset)
+from steps.step_02_exploration import (analyze_dataset, analyze_target, visualize_dataset)
 
-from step_03_data_cleaning import clean_dataset
+from steps.step_03_data_cleaning import clean_dataset
 
-from step_04_data_splitting import split_data
+from steps.step_04_data_splitting import split_data
 
-from step_05_preprocessing import create_preprocessor
+from steps.step_05_preprocessing import create_preprocessor
 
-from step_06_model_training import train_models
+from steps.step_06_model_training import train_models
 
-from step_07_model_evaluation import evaluate_models
+from steps.step_07_model_evaluation import evaluate_models
 
-from step_08_model_testing import test_best_model
+from steps.step_08_model_testing import test_best_model
 
-from step_09_model_persistence import dump_model
+from steps.step_09_model_persistence import dump_model
 
 
 def main():
