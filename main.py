@@ -4,6 +4,8 @@ from step_02_exploration import analyze_dataset, analyze_target, visualize_datas
 
 from step_03_data_cleaning import clean_dataset
 
+from step_04_data_splitting import split_data
+
 
 def main():
     limits = {
@@ -28,6 +30,12 @@ def main():
     analyze = analyze_target(df, limits)
     for k, v in analyze.items():
         print(f"\n{k}:\n{v}")
+
+    print("\n========== STEP 04 DATA SPLITTING ==========")
+    X_train, X_val, X_test, y_train, y_val, y_test = split_data(df)
+    print("X_train:", X_train.shape)
+    print("X_val:", X_val.shape)
+    print("X_test:", X_test.shape)
 
 
 if __name__ == "__main__":
