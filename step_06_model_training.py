@@ -1,9 +1,12 @@
+from sklearn.base import clone
+from sklearn.pipeline import Pipeline
+
 from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
 
 
-def train_models(X_train, y_train):
+def train_models(X_train, y_train, preprocessor):
 
     models = {
         "linear_regression": LinearRegression(),
@@ -23,7 +26,11 @@ def train_models(X_train, y_train):
     trained_models = {}
 
     for name, model in models.items():
-        model.fit(X_train, y_train)
-        trained_models[name] = model
+        pipeline = Pipeline([
+            ("preprocessor", clone(preprocessor)),
+            ("model", model)
+        ])
+        pipeline.fit(X_train, y_train)
+        trained_models[name] = pipeline
 
     return trained_models

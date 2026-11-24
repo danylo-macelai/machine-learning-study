@@ -120,6 +120,7 @@ def create_people_economic() -> pd.DataFrame:
         "dependents": [0],
         "job": ["CLT"],
         "marital": ["Solteiro"],
+        "education": ["Superior"],
         "region": ["Sudeste"]
     })
 
@@ -137,6 +138,7 @@ def create_people_high_spending() -> pd.DataFrame:
         "dependents": [2],
         "job": ["Empresario"],
         "marital": ["Casado"],
+        "education": ["Superior"],
         "region": ["Sudeste"]
     })
 
@@ -154,6 +156,7 @@ def create_people_high_income_low_spending() -> pd.DataFrame:
         "dependents": [0],
         "job": ["Servidor"],
         "marital": ["Viuvo"],
+        "education": ["Pos-graduacao"],
         "region": ["Sul"]
     })
 
@@ -171,6 +174,7 @@ def create_people_low_income_high_spending() -> pd.DataFrame:
         "dependents": [3],
         "job": ["Autonomo"],
         "marital": ["Casado"],
+        "education": ["Medio"],
         "region": ["Nordeste"]
     })
 
@@ -188,6 +192,7 @@ def create_people_large_family() -> pd.DataFrame:
         "dependents": [4],
         "job": ["CLT"],
         "marital": ["Casado"],
+        "education": ["Superior"],
         "region": ["Centro-Oeste"]
     })
 
@@ -205,6 +210,7 @@ def create_people_young_high_income() -> pd.DataFrame:
         "dependents": [0],
         "job": ["Empresario"],
         "marital": ["Solteiro"],
+        "education": ["Superior"],
         "region": ["Sudeste"]
     })
 
@@ -222,6 +228,7 @@ def create_people_elderly() -> pd.DataFrame:
         "dependents": [0],
         "job": ["Servidor"],
         "marital": ["Viuvo"],
+        "education": ["Medio"],
         "region": ["Sul"]
     })
 
@@ -239,6 +246,7 @@ def create_people_extremely_high_income() -> pd.DataFrame:
         "dependents": [2],
         "job": ["Empresario"],
         "marital": ["Casado"],
+        "education": ["Pos-graduacao"],
         "region": ["Sudeste"]
     })
 
@@ -256,6 +264,7 @@ def create_people_very_low_income() -> pd.DataFrame:
         "dependents": [1],
         "job": ["CLT"],
         "marital": ["Solteiro"],
+        "education": ["Medio"],
         "region": ["Norte"]
     })
 
@@ -273,6 +282,7 @@ def create_people_average_profile() -> pd.DataFrame:
         "dependents": [2],
         "job": ["Autonomo"],
         "marital": ["Casado"],
+        "education": ["Superior"],
         "region": ["Sul"]
     })
 

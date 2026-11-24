@@ -1,12 +1,12 @@
-from step_01_dataset import create_synthetic_people_dataset
+from step_01_dataset import (create_synthetic_people_dataset)
 
-from step_02_exploration import analyze_dataset, analyze_target, visualize_dataset
+from step_02_exploration import (analyze_dataset, analyze_target, visualize_dataset)
 
 from step_03_data_cleaning import clean_dataset
 
 from step_04_data_splitting import split_data
 
-from step_05_preprocessing import preprocess_data
+from step_05_preprocessing import create_preprocessor
 
 from step_06_model_training import train_models
 
@@ -30,7 +30,7 @@ def main():
     print(df.head(10))
 
     print("\n========== STEP 02 EXPLORATION ==========")
-    analyze = analyze_dataset(df, limits);
+    analyze = analyze_dataset(df, limits)
     for k, v in analyze.items():
         print(f"\n{k}:\n{v}")
     visualize_dataset(df)
@@ -48,17 +48,17 @@ def main():
     print("X_test:", X_test.shape)
 
     print("\n========== STEP 05 PREPROCESSING ==========")
-    X_train, X_val, X_test = preprocess_data(X_train, X_val, X_test)
-    print(X_train.head(10))
+    preprocessor = create_preprocessor()
+    print("Preprocessor created successfully")
 
     print("\n========== STEP 06 MODEL TRAINING ==========")
-    models = train_models(X_train, y_train)
-    for name, model in models.items():
+    models = train_models(X_train, y_train, preprocessor)
+    for name in models:
         print(f"{name}: trained successfully")
 
     print("\n========== STEP 07 MODEL EVALUATION ==========")
-    results = evaluate_models(models, X_val, y_val)
-    print(results.to_string(index=False))
+    evaluation_results = evaluate_models(models, X_val, y_val)
+    print(evaluation_results.to_string(index=False))
 
     print("\n========== STEP 08 FINAL TESTING ==========")
     results, comparison = test_best_model(
@@ -74,7 +74,6 @@ def main():
 
     print("\n========== STEP 09 MODEL PERSISTENCE ==========")
     dump_model(models)
-
 
 
 if __name__ == "__main__":
