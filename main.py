@@ -12,6 +12,8 @@ from step_06_model_training import train_models
 
 from step_07_model_evaluation import evaluate_models
 
+from step_08_model_testing import test_best_model
+
 
 def main():
     limits = {
@@ -55,6 +57,18 @@ def main():
     print("\n========== STEP 07 MODEL EVALUATION ==========")
     results = evaluate_models(models, X_val, y_val)
     print(results.to_string(index=False))
+
+    print("\n========== STEP 08 FINAL TESTING ==========")
+    results, comparison = test_best_model(
+        models,
+        X_test,
+        y_test
+    )
+    print("\nFinal metrics:")
+    for metric, value in results.items():
+        print(f"{metric}: {value}")
+    print("\nPredictions:")
+    print(comparison.to_string(index=False))
 
 
 if __name__ == "__main__":
