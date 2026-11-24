@@ -10,6 +10,8 @@ from step_05_preprocessing import preprocess_data
 
 from step_06_model_training import train_models
 
+from step_07_model_evaluation import evaluate_models
+
 
 def main():
     limits = {
@@ -49,6 +51,10 @@ def main():
     models = train_models(X_train, y_train)
     for name, model in models.items():
         print(f"{name}: trained successfully")
+
+    print("\n========== STEP 07 MODEL EVALUATION ==========")
+    results = evaluate_models(models, X_val, y_val)
+    print(results.to_string(index=False))
 
 
 if __name__ == "__main__":
