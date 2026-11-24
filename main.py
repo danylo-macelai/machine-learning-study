@@ -6,6 +6,8 @@ from step_03_data_cleaning import clean_dataset
 
 from step_04_data_splitting import split_data
 
+from step_05_preprocessing import preprocess_data
+
 
 def main():
     limits = {
@@ -37,6 +39,9 @@ def main():
     print("X_val:", X_val.shape)
     print("X_test:", X_test.shape)
 
+    print("\n========== STEP 05 PREPROCESSING ==========")
+    X_train, X_val, X_test = preprocess_data(X_train, X_val, X_test)
+    print(X_train.head(10))
 
 if __name__ == "__main__":
     main()
